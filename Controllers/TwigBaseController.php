@@ -12,7 +12,10 @@ class TwigBaseController extends BaseController {
             "title" => "Танцующий гусь",
             "url" => "/duck",
         ],
-        
+        [
+            "title" => "Грустный гусь",
+            "url" => "/sadGouse",
+        ],
         [
             "title" => "Рисованный гусь",
             "url" => "/drawnduck",
