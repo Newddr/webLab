@@ -1,5 +1,5 @@
 <?php
-require_once "TwigBaseController.php"; // импортим TwigBaseController
+
 
 class DuckController extends TwigBaseController {
     public $template = "_object.twig";
