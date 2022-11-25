@@ -1,0 +1,23 @@
+{% extends "_layout.twig" %}
+
+{% block content %}
+
+<div>
+
+   <ul class="nav nav-pills">
+   <li class="nav-item">
+    {% for i in section %}
+      <li class="nav-item">
+          
+          <a href="/{{url_prefix}}{{i.url}}" class="{{ i.url == section1 ? 'active' }} nav-link" >{{i.title}}</a>
+      </li>
+    {% endfor %}   
+   </li>
+    </ul> 
+
+
+  </div>
+{% block objectContent %}
+{% endblock %}
+
+{% endblock %}
