@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="container d-flex flex-direction-row" style="flex-wrap: wrap; width: max-content">
-    {% for k in 0..menu|length -1 %}
+    {% for object in gouse_objects%}
     <div class = "d-flex flex-column" style="
       width: 250px;
       height: 250px;
@@ -20,7 +20,7 @@
         
         
 
-        <img src={{gouse_objects[k].image}} style="
+        <img src={{object.image}} style="
             width: 240px;
             height: 240px;
             display: flex;
@@ -31,12 +31,12 @@
             border-radius: 25%;
             margin-bottom: 10px;
           ">
-        <a class = "btn btn-primary" href = {{menu[k].url}} style="
+        <a class = "btn btn-primary" href = "/gouse-object/{{object.id}}" style="
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-          "> {{menu[k].title}}</a>
+          "> {{object.title}}</a>
 
               <div style="
                 display: flex;
@@ -44,9 +44,11 @@
                 align-items: center;
                 text-align: center;
               ">
-                  {% for i in section %}
-                  <a href="{{menu[k].url}}{{i.url}}" class="btn btn-link" >{{i.title}}</a>
-                  {% endfor %}   
+              <a class="me-3" href="/gouse-object/{{object.id}}/image">Изображение</a>
+              <a  href="/gouse-object/{{object.id}}/info">Описание</a>
+                  {# {% for i in section %}
+                  <a href="{{menu[k].url}}{{i.url}}" class="btn btn-link" >{{object.id}}</a>
+                  {% endfor %}    #}
 
             </div>
         

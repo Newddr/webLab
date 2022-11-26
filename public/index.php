@@ -5,14 +5,11 @@
 require_once '../vendor/autoload.php';
 require_once '../frameworks/autoload.php';
 require_once "../Controllers/MainController.php";
-require_once "../controllers/SadGouseController.php";
-require_once "../controllers/IllustrationGouseController.php";
-require_once "../controllers/InfoGouseController.php";
-require_once "../controllers/DuckController.php";
-require_once "../controllers/InfoDuckController.php";
-require_once "../controllers/GifController.php";
+
 require_once "../controllers/Controller404.php";
 require_once "../controllers/ObjectController.php";
+require_once "../controllers/ImageController.php";
+require_once "../controllers/InfoController.php";
 
 // создаем загрузчик шаблонов, и указываем папку с шаблонами
 // \Twig\Loader\FilesystemLoader -- это типа как в C# писать Twig.Loader.FilesystemLoader, 
@@ -36,7 +33,9 @@ $pdo = new PDO("mysql:host=localhost;dbname=gousebase;charset=utf8", "root", "")
 $router = new Router($twig, $pdo);
 $router->add("/", MainController::class);
 $router->add("/duck", DuckController::class);
-$router->add("/gouse-object/(\d+)", ObjectController::class); 
+$router->add("/gouse-object/(?P<id>\d+)", ObjectController::class); 
+$router->add("/gouse-object/(?P<id>\d+)/image", ImageController::class); 
+$router->add("/gouse-object/(?P<id>\d+)/info", InfoController::class); 
 $router->get_or_default(Controller404::class);
 
 
