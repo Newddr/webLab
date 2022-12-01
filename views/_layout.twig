@@ -22,12 +22,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-         {% for item in menu %}
-        <li class="nav-item">
-            <!--так как item это словарик с двумя ключами, используем их для вывода ссылки -->
-            <a href="{{item.url}}" class="{{ url_prefix == item.url_prefix ? 'active' }} nav-link" >{{item.title}}</a>
-        </li>
-        {% endfor %}   
+         {% for type in types %}
+                    <li class="nav-item">
+                        <!-- type.type -- выдает тип, 
+                               а добавление |title делает первую букву с слова большой  -->
+                            <a class="nav-link" href="/?type={{ type.type }}">{{ type.type|title }}</a>
+                    </li>
+                {% endfor %}   
         </ul>
         </div>
     </div>

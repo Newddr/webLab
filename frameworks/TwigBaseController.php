@@ -60,6 +60,8 @@ class TwigBaseController extends BaseController {
     // функция гет, рендерит результат используя $template в качестве шаблона
     // и вызывает функцию getContext для формирования словаря контекста
     public function get() {
-        echo $this->twig->render($this->template, $this->getContext());
+        $fksd = $this->getContext();
+        echo $this->twig->render($this->template, $fksd);
+
     }
 }

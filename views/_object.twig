@@ -7,14 +7,14 @@
    <ul class="nav nav-pills">
    <li class="nav-item">
 
-  <a class="me-3" href="/gouse-object/{{idd}}/image">Изображение</a>
-  <a  href="/gouse-object/{{idd}}/info">Описание</a>
-    {# {% for i in section %}
+  {# <a class="me-3" href="/gouse-object/{{idd}}/image">Изображение</a> #}
+  {# <a  href="/gouse-object/{{idd}}/?show=image">Описание</a> #}
+     {% for i in section %}
       <li class="nav-item">
           
-          <a href="/{{url_prefix}}{{i.url}}" class="{{ i.url == section1 ? 'active' }} nav-link" >{{i.title}}</a>
+          <a class = "me-3"href="/gouse-object/{{idd}}/?show=image nav-link" >{{i.title}}</a>
       </li>
-    {% endfor %}    #}
+    {% endfor %}    
    </li>
     </ul> 
 
