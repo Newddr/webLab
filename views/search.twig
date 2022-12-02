@@ -1,0 +1,32 @@
+{% extends "_layout.twig" %}
+
+{% block content %}
+    <div class="ml-5 mb-2 container">
+    <h1 > Поиск</h1>
+    <form class="row g-4" action="">
+    <div class="col-sm-2 ">
+        <select class="form-select" name="type">
+            <option value="Все">Все</option> 
+            <option value="Утка">Утка</option>
+            <option value="Гусь">Гусь</option>
+        </select>
+    </div>
+    <div class="col-sm-2">
+        <input type="text" class="form-control" name="title" placeholder="Заголовок">
+    </div>
+    <div class="col-sm-2">
+    <input type="text" class="form-control" name="description" placeholder="Описание">
+    </div>
+    <div class="col-sm-2">
+    <button type="submit" class="btn btn-outline-info">Найти</button>
+    </div>
+    </form>
+</div>
+<div class="ml-5 container">
+    {% for o in objects %}
+        <div class="border border-secondary rounded p-2 mb-2">
+          <a  href="/gouse-object/{{o.id}}">{{o.title}}</a>
+        </div>              
+    {% endfor %}  
+</div>
+{% endblock %}

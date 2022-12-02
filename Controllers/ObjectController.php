@@ -13,14 +13,14 @@ class ObjectController extends BaseSpaceTwigController {
     }
     public $template = "404.twig";
     public function getContext():array{
-        // ПЕРЕНЕСИ СЮДА ОН ТУТ БЫЛ
+        
 
         if(isset($_GET['show'])){
             $typeShow=$_GET['show'];
             
             if($typeShow=="image")
             {
-                // ТУТ НЕТ КОСЯКА , У МЕНЯ ТЕМПЛЕЙТЫ НЕ МЕНЯЮТСЯ 
+                
                
                
                 $this->template = "_infoSecondEx.twig";

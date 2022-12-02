@@ -6,15 +6,8 @@
 
    <ul class="nav nav-pills">
    <li class="nav-item">
-
-  {# <a class="me-3" href="/gouse-object/{{idd}}/image">Изображение</a> #}
-  {# <a  href="/gouse-object/{{idd}}/?show=image">Описание</a> #}
-     {% for i in section %}
-      <li class="nav-item">
-          
-          <a class = "me-3"href="/gouse-object/{{idd}}/?show=image nav-link" >{{i.title}}</a>
-      </li>
-    {% endfor %}    
+    <a class="me-3" href="/gouse-object/{{idd}}/?show=image">Изображение</a>
+    <a  href="/gouse-object/{{idd}}/?show=info">Описание</a>
    </li>
     </ul> 
 
