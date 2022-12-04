@@ -1,0 +1,79 @@
+{% extends "_layout.twig" %}
+
+{% block content %}
+<div class="ml-5 mb-2 container">
+    <h1>Добавляем гуся (утку)</h1>
+    <hr>
+
+    {% if message %}
+    <div class="alert alert-info">
+    {{message}}
+    <a href="/gouse-object/{{id}}">{{title}}</a>
+    </div>
+    
+    {% endif %}
+    
+    <form type=""  method="POST" enctype="multipart/form-data" class="row g-3">
+        <div class="col-4">
+            <label class="form-label">Название</label>
+            <input type="text" class="form-control" name="title">
+        </div>
+        <div class="col-4">
+            <label class="form-label">Краткое описание</label>
+            <input type="text" class="form-control" name="description">
+        </div>
+        <div class="col-4">
+            <label class="form-label">Тип</label>
+            <select class="form-control" name="type">
+                {% for o in gouse_types %}
+                <option value={{o.type}}>{{o.type}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+  <label for="formFile" class="form-label">Изображение</label>
+  <input class="form-control" type="file" id="formFile" name="image">
+</div>
+        <div class="col-12">
+        <div class="col-4">
+            <label class="form-label">Заголовок</label>
+            <input type="text" class="form-control" name="infoBig">
+        </div>
+            <textarea name="info" placeholder="Полное описание..." class="form-control" rows="5"></textarea>
+        </div>
+        <div class="col-12 text-end">
+            <button name="object" type="submit" value="object" class="btn btn-primary">Добавить</button>
+        </div>
+    </form>
+    </div>
+
+
+    <div class="ml-5 mb-2 container">
+    <h1>Добавляем тип крылатого</h1>
+    <hr>
+
+    {% if message1 %}
+    <div class="alert alert-info">
+    {{message1}}
+    {{typeT}}
+    </div>
+    
+    {% endif %}
+
+    <form type=""  method="POST" enctype="multipart/form-data" class="row g-3">
+        <div class="col-4">
+            <label class="form-label">Название типа</label>
+            <input type="text" class="form-control" name="typeT">
+        </div>
+        <div class="mb-3">
+  <label for="formFile" class="form-label">Изображение</label>
+  <input class="form-control" type="file" id="formFile" name="image">
+</div>
+        
+        <div class="col-12 text-end">
+            <button name="type" type="submit" value="type" class="btn btn-primary">Добавить</button>
+        </div>
+    </form>
+    </div>
+
+{% endblock %}

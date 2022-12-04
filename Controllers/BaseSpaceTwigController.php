@@ -11,7 +11,7 @@ class BaseSpaceTwigController extends TwigBaseController {
 
         
         
-        $query = $this->pdo->query("SELECT DISTINCT type from gouse_objects ORDER BY 1");
+        $query = $this->pdo->query("SELECT DISTINCT type from gouse_types ORDER BY 1");
         // тянем данные
         $types = $query->fetchAll();
         

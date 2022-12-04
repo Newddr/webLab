@@ -10,6 +10,9 @@ require_once "../controllers/Controller404.php";
 require_once "../controllers/ObjectController.php";
 require_once "../controllers/BaseSpaceTwigController.php";
 require_once "../controllers/SearchController.php";
+require_once "../controllers/CreateController.php";
+
+
 
 
 // создаем загрузчик шаблонов, и указываем папку с шаблонами
@@ -36,8 +39,8 @@ $router = new Router($twig, $pdo);
 $router->add("/", MainController::class);
 $router->add("/duck", DuckController::class);
 $router->add("/gouse-object/(?P<id>\d+)", ObjectController::class); 
-$router->add("/gouse-object/(?P<id>\d+)/", ObjectController::class); 
 $router->add("/search", SearchController::class);
+$router->add("/create", CreateController::class);
 $router->get_or_default(Controller404::class);
 
 
