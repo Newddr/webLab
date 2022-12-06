@@ -4,6 +4,7 @@
 // подключаем пакеты которые установили через composer
 require_once '../vendor/autoload.php';
 require_once '../frameworks/autoload.php';
+require_once '../middlewares/LoginRequireMiddeware.php';
 require_once "../Controllers/MainController.php";
 
 require_once "../controllers/Controller404.php";
@@ -44,9 +45,9 @@ $router->add("/", MainController::class);
 $router->add("/duck", DuckController::class);
 $router->add("/gouse-object/(?P<id>\d+)", ObjectController::class); 
 $router->add("/search", SearchController::class);
-$router->add("/create", CreateController::class);
-$router->add("/gouse-objects/delete", ObjectDeleteController::class);
-$router->add("/gouse-objects/edit", UpdateObjectController::class);
+$router->add("/create", CreateController::class)->middleware(new LoginRequireMiddeware());
+$router->add("/gouse-objects/delete", ObjectDeleteController::class)->middleware(new LoginRequireMiddeware());
+$router->add("/gouse-objects/edit", UpdateObjectController::class)->middleware(new LoginRequireMiddeware());
 $router->get_or_default(Controller404::class);
 
 
