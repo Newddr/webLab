@@ -12,6 +12,8 @@ require_once "../controllers/BaseSpaceTwigController.php";
 require_once "../controllers/SearchController.php";
 require_once "../controllers/CreateController.php";
 require_once "../controllers/ObjectDeleteController.php";
+require_once "../controllers/UpdateObjectController.php";
+
 
 
 
@@ -44,6 +46,7 @@ $router->add("/gouse-object/(?P<id>\d+)", ObjectController::class);
 $router->add("/search", SearchController::class);
 $router->add("/create", CreateController::class);
 $router->add("/gouse-objects/delete", ObjectDeleteController::class);
+$router->add("/gouse-objects/edit", UpdateObjectController::class);
 $router->get_or_default(Controller404::class);
 
 
